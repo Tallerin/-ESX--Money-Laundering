@@ -147,12 +147,10 @@ function MenuVehicleSpawner()
 				SetVehicleNumberPlateText(vehicle, "WAL"..platenum)
                 MissionLivraisonSelect()
 				plaquevehicule = "WAL"..platenum
-				xPlayer.removeAccountMoney('black_money', '500') -- Cost $500 Dirty Money
-
-				if data.current.value == 'phantom3' then
-					ESX.Game.SpawnVehicle("trailers2", Config.Zones.VehicleSpawnPoint.Pos, 270.0, function(trailer)
-					    AttachVehicleToTrailer(vehicle, trailer, 1.1)
-					end)
+				
+				if xPlayer ~= nil then
+					local money = xPlayer.getAccount('black_money').money
+					xPlayer.removeAccountMoney('black_money', '500') -- Cost $500 Dirty Money
 				end
 				TaskWarpPedIntoVehicle(GetPlayerPed(-1), vehicle, -1)
 			end)
