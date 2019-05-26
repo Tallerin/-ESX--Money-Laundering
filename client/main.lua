@@ -149,7 +149,6 @@ function MenuVehicleSpawner()
 				plaquevehicule = "WAL"..platenum
 				
 				if xPlayer ~= nil then
-					local money = xPlayer.getAccount('black_money').money
 					xPlayer.removeAccountMoney('black_money', '500') -- Cost $500 Dirty Money
 				end
 				TaskWarpPedIntoVehicle(GetPlayerPed(-1), vehicle, -1)
